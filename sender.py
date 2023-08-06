@@ -14,6 +14,7 @@ tty.setcbreak(sys.stdin.fileno())
 node = sx126x(serial_num = "/dev/ttyS0",freq=868,addr=0,power=22,rssi=True,air_speed=2400,relay=False)
 
 def send_command():
+    get_rec = ""
     print("Input command in the following format:\n")
     print("\033[1;32m0,868,shutdown now\033[0m")
     print("This will send the command to a device with address 0, on frequency 868, to shutdown now\n")
@@ -45,16 +46,16 @@ try:
         if select.select([sys.stdin], [], [], 0) == ([sys.stdin], [], []):
             c = sys.stdin.read(1)
 
-        # Esc Key detection
-        if c == '\x1b':
-            break
-        # s key detection
-        if c == '/x73':
-            pass
+            # Esc Key detection
+            if c == '\x1b':
+                break
+            # s key detection
+            if c == '/x73':
+                send_command()
 
-        sys.stdout.flush()
-    
-    node.receive()
+            sys.stdout.flush()
+        
+        node.receive()
 
 except:
     termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
