@@ -50,7 +50,7 @@ try:
             if c == '\x1b':
                 break
             # s key detection
-            if c == '/x73':
+            if c == '\x73':
                 send_command()
 
             sys.stdout.flush()
