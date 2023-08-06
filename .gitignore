@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Stuff
+pushtopi.sh
+
 # C extensions
 *.so
 
