@@ -17,7 +17,7 @@ def send_command():
     get_rec = ""
     print("Input command in the following format:")
     print("\033[1;34m<node_address>,<freq>,<command>\033[0m")
-    print("\033[1;34m0,868,sudo reboot\033[0m")
+    print("Example: \033[1;34m0,868,sudo reboot\033[0m")
     print("This will send the command to a node with address 0, on frequency 868, reboot the node\n")
 
     while True:
@@ -41,7 +41,7 @@ try:
     time.sleep(1)
     # Initial prompts
     utils.header()
-    print("Usage:\n")
+    print("Usage:")
     print("- Press \033[1;34mEsc\033[0m to exit\n- Press \033[1;34ms\033[0m to send a command\n")
 
     while True:
