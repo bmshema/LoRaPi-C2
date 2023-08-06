@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from sx126x import sx126x
 import time
 import termios
@@ -13,17 +14,16 @@ tty.setcbreak(sys.stdin.fileno())
 node = sx126x(serial_num = "/dev/ttyS0",freq=868,addr=0,power=22,rssi=True,air_speed=2400,relay=False)
 
 def header():
-    print("               ┓   ┳┓    ┏┓┏┓\n\
-               ┃ ┏┓┣┫┏┓  ┃ ┏┛\n\
-               ┗┛┗┛┛┗┗┻  ┗┛┗━\n\
-               ---------------\n\
-               Commander Node")
+    print("       ┓   ┳┓  ┏┓•  ┏┓┏┓\n\
+       ┃ ┏┓┣┫┏┓┃┃┓  ┃ ┏┛\n\
+       ┗┛┗┛┛┗┗┻┣┛┗  ┗┛┗━\n\
+       -----------------\n\
+        Commander Node")
 def send_command():
     get_rec = ""
     print("Input command in the following format:")
     print("\033[1;34m<node_address>,<freq>,<command>\033[0m")
     print("Example: \033[1;34m0,868,sudo reboot\033[0m")
-    print("This will send the command to a node with address 0, on frequency 868, reboot the node\n")
 
     while True:
         rec = sys.stdin.read(1)

@@ -1,24 +1,24 @@
+#!/usr/bin/python3
 import subprocess
 from sx126x import sx126x
 import time
-
 
 # Create sx126x node
 node = sx126x(serial_num = "/dev/ttyS0",freq=868,addr=1,power=22,rssi=True,air_speed=2400,relay=False)
 
 try:
     time.sleep(1)
-    print("               ┓   ┳┓    ┏┓┏┓\n\
-               ┃ ┏┓┣┫┏┓  ┃ ┏┛\n\
-               ┗┛┗┛┛┗┗┻  ┗┛┗━\n\
-               ---------------\n\
-                Receiver Node")
+    print("       ┓   ┳┓  ┏┓•  ┏┓┏┓\n\
+       ┃ ┏┓┣┫┏┓┃┃┓  ┃ ┏┛\n\
+       ┗┛┗┛┛┗┗┻┣┛┗  ┗┛┗━\n\
+       -----------------\n\
+         Receiver Node")
 
     while True:
         incoming_data = node.receive()
         if incoming_data:
             command = incoming_data.decode().split(',')
-            print("Command received:", command)
+            print("\nCommand received:", command)
             
             try:
                 output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT)
