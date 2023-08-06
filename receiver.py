@@ -12,17 +12,18 @@ try:
        ┃ ┏┓┣┫┏┓┃┃┓  ┃ ┏┛\n\
        ┗┛┗┛┛┗┗┻┣┛┗  ┗┛┗━\n\
        -----------------\n\
-         Receiver Node")
+         Receiver Node\n")
 
     while True:
         incoming_data = node.receive()
         if incoming_data:
             command = incoming_data.decode().split(',')
-            print("\nCommand received:", command)
+            print("Command received:", command)
             
             try:
                 output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT)
                 print("Command output:\n", output.decode())
+                
             except subprocess.CalledProcessError as e:
                 print("Error executing command:", e.output.decode())
 
