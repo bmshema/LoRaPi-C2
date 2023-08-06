@@ -14,7 +14,7 @@ try:
                ┃ ┏┓┣┫┏┓  ┃ ┏┛\n\
                ┗┛┗┛┛┗┗┻  ┗┛┗━\n\
                ---------------\n\
-                  Receiver")
+                Receiver Node")
 
     while True:
         incoming_data = node.receive()
