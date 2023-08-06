@@ -1,5 +1,4 @@
 from sx126x import sx126x
-import utils
 import time
 import termios
 import tty
