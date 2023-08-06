@@ -18,7 +18,7 @@ try:
             
             try:
                 output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT)
-                print("Command output:", output.decode())
+                print("Command output:\n", output.decode())
             except subprocess.CalledProcessError as e:
                 print("Error executing command:", e.output.decode())
 
