@@ -48,7 +48,7 @@ try:
     # Initial prompts
     header()
     print("Usage:")
-    print("- Press \033[1;34mEsc\033[0m to exit\n- Press \033[1;34ms\033[0m to send a command\n")
+    print("- Press \033[1;34mEsc\033[0m to exit\n- Press \033[1;34mc\033[0m to send a command\n")
 
     while True:
         if select.select([sys.stdin], [], [], 0) == ([sys.stdin], [], []):
@@ -58,7 +58,7 @@ try:
             if c == '\x1b':
                 break
             # s key detection
-            if c == '\x73':
+            if c == '\x63':
                 send_command()
 
             sys.stdout.flush()
