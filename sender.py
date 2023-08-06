@@ -13,6 +13,12 @@ tty.setcbreak(sys.stdin.fileno())
 # Create sx126x node
 node = sx126x(serial_num = "/dev/ttyS0",freq=868,addr=0,power=22,rssi=True,air_speed=2400,relay=False)
 
+def header():
+    print("               ┓   ┳┓    ┏┓┏┓\n\
+               ┃ ┏┓┣┫┏┓  ┃ ┏┛\n\
+               ┗┛┗┛┛┗┗┻  ┗┛┗━\n\
+               ---------------")
+
 def send_command():
     get_rec = ""
     print("Input command in the following format:")
@@ -40,7 +46,7 @@ def send_command():
 try:
     time.sleep(1)
     # Initial prompts
-    utils.header()
+    header()
     print("Usage:")
     print("- Press \033[1;34mEsc\033[0m to exit\n- Press \033[1;34ms\033[0m to send a command\n")
 

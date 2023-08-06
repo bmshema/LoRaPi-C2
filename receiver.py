@@ -1,4 +1,5 @@
 import subprocess
+import utils
 from sx126x import sx126x
 import time
 import sys
@@ -9,6 +10,11 @@ node = sx126x(serial_num = "/dev/ttyS0",freq=868,addr=0,power=22,rssi=True,air_s
 
 try:
     time.sleep(1)
+    print("               ┓   ┳┓    ┏┓┏┓\n\
+               ┃ ┏┓┣┫┏┓  ┃ ┏┛\n\
+               ┗┛┗┛┛┗┗┻  ┗┛┗━\n\
+               ---------------\n\
+                  Receiver")
 
     while True:
         incoming_data = node.receive()
