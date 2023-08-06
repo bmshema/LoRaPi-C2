@@ -16,8 +16,8 @@ node = sx126x(serial_num = "/dev/ttyS0",freq=868,addr=0,power=22,rssi=True,air_s
 def send_command():
     get_rec = ""
     print("Input command in the following format:")
-    print("\033[1;32m<node_address>,<freq>,<command>\033[0m")
-    print("\033[1;32m0,868,sudo reboot\033[0m")
+    print("\033[1;34m<node_address>,<freq>,<command>\033[0m")
+    print("\033[1;34m0,868,sudo reboot\033[0m")
     print("This will send the command to a node with address 0, on frequency 868, reboot the node\n")
 
     while True:
@@ -35,14 +35,14 @@ def send_command():
     data = bytes([int(get_t[0])>>8]) + bytes([int(get_t[0])&0xff]) + bytes([offset_freq]) + bytes([node.addr>>8]) + bytes([node.addr&0xff]) + bytes([node.offset_freq]) + get_t[2].encode()
 
     node.send(data)
-    print("\n\033[1;32mCommand sent!\033[0m\n")
+    print("\n\033[1;34mCommand sent!\033[0m\n")
 
 try:
     time.sleep(1)
     # Initial prompts
     utils.header()
     print("Usage:\n")
-    print("- Press \033[1;32mEsc\033[0m to exit\n- Press \033[1;32ms\033[0m to send a command\n")
+    print("- Press \033[1;34mEsc\033[0m to exit\n- Press \033[1;34ms\033[0m to send a command\n")
 
     while True:
         if select.select([sys.stdin], [], [], 0) == ([sys.stdin], [], []):
