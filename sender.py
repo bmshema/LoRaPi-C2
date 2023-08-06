@@ -18,7 +18,7 @@ def header():
                ┃ ┏┓┣┫┏┓  ┃ ┏┛\n\
                ┗┛┗┛┛┗┗┻  ┗┛┗━\n\
                ---------------\n\
-                Commander Node")
+               Commander Node")
 def send_command():
     get_rec = ""
     print("Input command in the following format:")

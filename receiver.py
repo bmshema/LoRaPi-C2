@@ -6,7 +6,7 @@ import sys
 import select
 
 # Create sx126x node
-node = sx126x(serial_num = "/dev/ttyS0",freq=868,addr=0,power=22,rssi=True,air_speed=2400,relay=False)
+node = sx126x(serial_num = "/dev/ttyS0",freq=868,addr=1,power=22,rssi=True,air_speed=2400,relay=False)
 
 try:
     time.sleep(1)
