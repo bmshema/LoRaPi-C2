@@ -78,9 +78,9 @@ Modify the ExecStart field to reflect the path to your system's python3 executab
 sudo systemctl start receiver.service
 sudo systemctl enable receiver.service
 ```
-## To Do;
-- Implement acknowledgement of command execution form receiver nodes.
+## To Do:
+- Implement acknowledgement of command execution from receiver nodes.
 - Send command output back to the commander node.
 
-#### Warning: Always comply with your national radio frequency usage restrictions.
+#### Warning: Always comply with your national radio frequency usage regulations.
 
