@@ -6,6 +6,17 @@ import tty
 import sys
 import select
 
+def header():
+    print("       ┓   ┳┓  ┏┓•  ┏┓┏┓\n\
+       ┃ ┏┓┣┫┏┓┃┃┓  ┃ ┏┛\n\
+       ┗┛┗┛┛┗┗┻┣┛┗  ┗┛┗━\n\
+       -----------------\n\
+        Commander Node\n")
+    
+def help():
+    print("Command Format: node address,frequency,payload")
+    print("Example: \033[1;34m1,915,sudo reboot\033[0m\n")
+
 # Termios setup
 old_settings = termios.tcgetattr(sys.stdin)
 tty.setcbreak(sys.stdin.fileno())
@@ -13,18 +24,10 @@ tty.setcbreak(sys.stdin.fileno())
 # Create sx126x node
 node = sx126x(serial_num = "/dev/ttyS0",freq=915,addr=0,power=22,rssi=True,air_speed=2400,relay=False)
 
-def header():
-    print("       ┓   ┳┓  ┏┓•  ┏┓┏┓\n\
-       ┃ ┏┓┣┫┏┓┃┃┓  ┃ ┏┛\n\
-       ┗┛┗┛┛┗┗┻┣┛┗  ┗┛┗━\n\
-       -----------------\n\
-        Commander Node\n")
 def send_command():
     get_rec = ""
-    print("Input command in the following format:")
-    print("\033[1;34m<node_address>,<freq>,<command>\033[0m")
-    print("Example: \033[1;34m1,915,sudo reboot\033[0m\n")
-
+    print("\033[1;34mEnter Command:\033[0m")
+    
     while True:
         rec = sys.stdin.read(1)
         if rec != None:
@@ -47,7 +50,9 @@ try:
     # Initial prompts
     header()
     print("Usage:")
-    print("- Press \033[1;34mEsc\033[0m to exit\n- Press \033[1;34mc\033[0m to send a command\n")
+    print("- Press \033[1;34mEsc\033[0m to exit")
+    print("- Press \033[1;34mc\033[0m to send command")
+    print("- Press \033[1;34mh\033[0m for help\n")
 
     while True:
         if select.select([sys.stdin], [], [], 0) == ([sys.stdin], [], []):
@@ -59,12 +64,12 @@ try:
             # s key detection
             if c == '\x63':
                 send_command()
+            if c == '\x68':
+                help()
 
             sys.stdout.flush()
-        
         node.receive()
 
 except:
     termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
-
 termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
