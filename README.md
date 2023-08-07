@@ -41,6 +41,10 @@ node = sx126x(serial_num = "/dev/ttyS0",freq=915,addr=0,power=22,rssi=True,air_s
 - If running commander.py from windows, change "/dev/ttySO" to the appropriate COM port.
 
 ### "Receiver Node":
+The receiver node is address 1 by default. For multiple receiver nodes, you may change the node address on line 7 for each additional node.
+```python
+node = sx126x(serial_num = "/dev/ttyS0",freq=915,addr=0,power=22,rssi=True,air_speed=2400,relay=False)
+```
 For testing, ssh to your receiver node and run:
 ```bash
 sudo python3 receiver.py
