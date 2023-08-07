@@ -231,6 +231,13 @@ class sx126x:
             r_buff = self.ser.read(self.ser.inWaiting())
 
             return (r_buff[3:-1])
+        
+    def get_rssi(self):
+        # if self.ser.inWaiting() > 0:
+        #     time.sleep(0.5)
+        #     r_buff = self.ser.read(self.ser.inWaiting())
+
+        return self.get_channel_rssi()
 
     def get_channel_rssi(self):
         GPIO.output(self.M1,GPIO.LOW)
@@ -244,9 +251,9 @@ class sx126x:
             time.sleep(0.1)
             re_temp = self.ser.read(self.ser.inWaiting())
         if re_temp[0] == 0xC1 and re_temp[1] == 0x00 and re_temp[2] == 0x02:
-            print("the current noise rssi value: -{0}dBm".format(256-re_temp[3]))
-            # print("the last receive packet rssi value: -{0}dBm".format(256-re_temp[4]))
+            #print("the current noise rssi value: -{0}dBm".format(256-re_temp[3]))
+            return (256-re_temp[4])
         else:
-            # pass
-            print("receive rssi value fail")
-            # print("receive rssi value fail: ",re_temp)
+            pass
+            # print("receive rssi value fail")
+            # # print("receive rssi value fail: ",re_temp)
