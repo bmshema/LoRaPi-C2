@@ -23,4 +23,20 @@ $ git clone https://github.com/bmshema/pi-C2-over-LoRa.git
 $ cd LoRaPi_C2
 $ pip install -r requirements.txt
 ```
+## Usage:
+#### "Commander Node":
+```
+sudo python3 commander.py
+```
+- Press "c" to send a command.
+- Commands should be structured as <node address>,<frequency>,<command>
+
+By default, the commander is node address 0 and the receiver is node address 1 at 915MHz. Change the frequency on line 14 to comply with your regional RF regulations.
+```python
+node = sx126x(serial_num = "/dev/ttyS0",freq=915,addr=0,power=22,rssi=True,air_speed=2400,relay=False)
+```
+
+
+
+## Warning: Always comply with your national radio frequency usage restrictions.
 
