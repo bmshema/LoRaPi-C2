@@ -23,7 +23,7 @@ def send_command():
     get_rec = ""
     print("Input command in the following format:")
     print("\033[1;34m<node_address>,<freq>,<command>\033[0m")
-    print("Example: \033[1;34m0,915,sudo reboot\033[0m\n")
+    print("Example: \033[1;34m1,915,sudo reboot\033[0m\n")
 
     while True:
         rec = sys.stdin.read(1)
