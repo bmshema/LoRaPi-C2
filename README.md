@@ -24,7 +24,7 @@ $ cd LoRaPi_C2
 $ pip install -r requirements.txt
 ```
 ## Usage:
-#### "Commander Node":
+### "Commander Node":
 ```
 sudo python3 commander.py
 ```
@@ -40,7 +40,7 @@ node = sx126x(serial_num = "/dev/ttyS0",freq=915,addr=0,power=22,rssi=True,air_s
 - If running commander.py from a Linux-based laptop change "/dev/ttyS0" to "/dev/ttyUSB0". This could be different depending on your system and what other devices might be connected.
 - If running commander.py from windows, change "/dev/ttySO" to the appropriate COM port.
 
-#### "Receiver Node":
+### "Receiver Node":
 For testing, ssh to your receiver node and run:
 ```bash
 sudo python3 receiver.py
