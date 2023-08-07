@@ -7,9 +7,18 @@ This was built for the Waveshare SX1262 868M LoRa Hat on Raspberry Pi 4B. The C2
 Connect the SX1262 to the Raspberry Pi according to vendor instructions and set the jumper caps to "B".
 
 ## Installation:
-##### Linux:
+#### Linux C2 / Remote Nodes:
 ```
 $ sudo apt install python3 python3-pip
+$ git clone https://github.com/bmshema/pi-C2-over-LoRa.git
+$ cd LoRaPi_C2
+$ pip install -r requirements.txt
+```
+#### Windows (If using a Windows machine for C2):
+- Install SX1262 per vendors instructions.
+- Set jumper caps to "A", M1, and M0.
+- Install Python3
+```
 $ git clone https://github.com/bmshema/pi-C2-over-LoRa.git
 $ cd LoRaPi_C2
 $ pip install -r requirements.txt
