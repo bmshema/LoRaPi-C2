@@ -14,15 +14,7 @@ $ git clone https://github.com/bmshema/pi-C2-over-LoRa.git
 $ cd LoRaPi_C2
 $ pip install -r requirements.txt
 ```
-#### Windows (If using a Windows machine for C2):
-- Install SX1262 drivers per vendor's instructions.
-- Connect to SX1262 via USB and set jumper caps to "A", M1, and M0.
-- Install Python3
-```
-$ git clone https://github.com/bmshema/pi-C2-over-LoRa.git
-$ cd LoRaPi_C2
-$ pip install -r requirements.txt
-```
+
 ## Usage:
 ### "Commander Node":
 ```
@@ -38,7 +30,6 @@ By default, the commander is node address 0 and the receiver is node address 1 a
 node = sx126x(serial_num = "/dev/ttyS0",freq=915,addr=0,power=22,rssi=True,air_speed=2400,relay=False)
 ```
 - If running commander.py from a Linux-based laptop with SX1262 connected to USB, change "/dev/ttyS0" to "/dev/ttyUSB0". This could be different depending on your system and what other devices might be connected.
-- If running commander.py from Windows, change "/dev/ttyS0" to the appropriate COM port for the SX1262.
 
 ### "Receiver Node":
 The receiver node is address 1 by default. For multiple receiver nodes, you may change the node address on line 7 for each additional node.
