@@ -12,6 +12,10 @@ def header():
        ┗┛┗┛┛┗┗┻┣┛┗  ┗┛┗━\n\
        -----------------\n\
         Commander Node\n")
+    print("Usage:")
+    print("- Press \033[1;34mEsc\033[0m to exit")
+    print("- Press \033[1;34mc\033[0m to send command")
+    print("- Press \033[1;34mh\033[0m for help\n")
     
 def help():
     print("Command Format: node address,frequency,payload")
@@ -49,10 +53,6 @@ try:
     time.sleep(1)
     # Initial prompts
     header()
-    print("Usage:")
-    print("- Press \033[1;34mEsc\033[0m to exit")
-    print("- Press \033[1;34mc\033[0m to send command")
-    print("- Press \033[1;34mh\033[0m for help\n")
 
     while True:
         if select.select([sys.stdin], [], [], 0) == ([sys.stdin], [], []):
