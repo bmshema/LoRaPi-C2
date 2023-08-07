@@ -29,7 +29,7 @@ By default, the commander is node address 0 and the receiver is node address 1 a
 ```python
 node = sx126x(serial_num = "/dev/ttyS0",freq=915,addr=0,power=22,rssi=True,air_speed=2400,relay=False)
 ```
-- If running commander.py from a Linux-based laptop with SX1262 connected to USB, change "/dev/ttyS0" to "/dev/ttyUSB0". This could be different depending on your system and what other devices might be connected.
+- If running commander.py from a Linux-based laptop with SX1262 connected to USB, change "/dev/ttyS0" to "/dev/ttyUSB0". This could be different depending on your system and what other devices might be connected. Set jumper caps to "A", M1, and M0 when using this configuration.
 
 ### "Receiver Node":
 The receiver node is address 1 by default. For multiple receiver nodes, you may change the node address on line 7 for each additional node.
