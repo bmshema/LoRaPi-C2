@@ -30,11 +30,14 @@ sudo python3 commander.py
 ```
 - Press "c" to send a command.
 - Commands should be structured as <node address>,<frequency>,<command>
+Example: 1,915,sudo reboot
 
 By default, the commander is node address 0 and the receiver is node address 1 at 915MHz. Change the frequency on line 14 to comply with your regional RF regulations.
 ```python
 node = sx126x(serial_num = "/dev/ttyS0",freq=915,addr=0,power=22,rssi=True,air_speed=2400,relay=False)
 ```
+- If running commander.py from a Linux-based laptop change "/dev/ttyS0" to "/dev/ttyUSB0". This could be different depending on your system and what other devices might be connected.
+- If running commander.py from windows, change "/dev/ttySO" to the appropriate COM port.
 
 
 
