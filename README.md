@@ -30,7 +30,7 @@ sudo python3 commander.py
 ```
 - Press "c" to send a command.
 - Commands should be structured as "nodeAdress,frequncy,command"
-Example: 1,915,sudo reboot
+- Example: 1,915,sudo reboot
 
 By default, the commander is node address 0 and the receiver is node address 1 at 915MHz. Change the frequency on line 14 to comply with your regional RF regulations.
 ```python
