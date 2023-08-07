@@ -15,7 +15,7 @@ $ cd LoRaPi_C2
 $ pip install -r requirements.txt
 ```
 #### Windows (If using a Windows machine for C2):
-- Install SX1262 per vendor's instructions.
+- Install SX1262 drivers per vendor's instructions.
 - Connect to SX1262 via USB and set jumper caps to "A", M1, and M0.
 - Install Python3
 ```
