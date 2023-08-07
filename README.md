@@ -1,7 +1,7 @@
 # LoRaPi C2
 Enables remote command execution on one or more Raspberry Pis over LoRa. This is meant for simple command execution such as rebooting a remote node or executing pre-staged scripts for various functions.
 
-## Hardare Requirements:
+## Hardware Requirements:
 This was built for the Waveshare SX1262 868M LoRa Hat on Raspberry Pi 4B. The C2 can either be another Raspberry Pi or a laptop with the SX1262 connected to USB.
 
 Connect the SX1262 to the Raspberry Pi according to vendor instructions and set the jumper caps to "B".
@@ -29,7 +29,7 @@ $ pip install -r requirements.txt
 sudo python3 commander.py
 ```
 - Press "c" to send a command.
-- Commands should be structured as "nodeAdress,frequency,command"
+- Commands should be structured as "nodeAddress,frequency,command"
 - Example: 1,915,ls -alh
 - Press enter. Press "c" to run another command.
 
