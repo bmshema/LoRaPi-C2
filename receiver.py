@@ -19,7 +19,7 @@ try:
         if incoming_data:
             command = incoming_data.decode().split(',')
             
-            print("Command received:", command, "@ -",node.get_rssi(), "dBm")
+            print(f"Command Received: {command} @ -{node.get_rssi()} dBm")
             
             try:
                 output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT)
