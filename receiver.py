@@ -16,15 +16,15 @@ try:
          Receiver Node\n")
 
     while True:
-        log = open("receiver_node.log", "a")
-        clock = datetime.now()
+        log = open("/home/pi/LoRaPi-C2/receiver_node.log", "a")
+        clock = datetime.datetime.now()
 
         incoming_data = node.receive()
         if incoming_data:
             command = incoming_data.decode().split(',')
             
-            print(f" {clock} Command Received: {command} @ -{node.get_rssi()} dBm")
-            log.write(f"{clock} Command Received: {command} @ -{node.get_rssi()} dBm")
+            print(f" {clock} Command Received: {command} @ -{node.get_rssi()} dBm\n")
+            log.write(f"{clock} Command Received: {command} @ -{node.get_rssi()} dBm\n")
             try:
                 output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT)
                 print("Command output:\n", output.decode())
